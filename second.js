@@ -106,4 +106,121 @@ switch(day){
     case 3:
         console.log("th")
         break
+    case 4:
+        console.log("fri")
+        break
+    default:
+        console.log("Day not found")
+}
+
+const numbers = [12,3,5,7,87,4,34]
+
+for(let n of numbers){
+    console.log(n)
+}
+
+const pc ={brand:"hp", model:"pavilion", ram:"8GB", storage:"500Gb"}
+
+for(let key in pc){
+    console.log(key)
+    console.log(pc[key])
+}
+
+//aray of objects
+
+
+const students = [
+    
+    {id: 1, Name:"blen", Gender:"F"},
+    {id: 2, Name:"sada", Gender:"F"},
+    {id: 3, Name:"kebreab", Gender:"M"},
+]
+
+console.log(students[1].Name)
+
+//object with array
+
+const student ={
+    id: 1,
+    Name: "blen",
+    Gender:"F",
+    Hobby: ["Sport", "Music","Art"]
+}
+
+console.log(student.Hobby)
+
+//Nested objects
+
+const company = {
+    name: "Sage",
+    Address: {
+        country:"Ethiopia",
+        city:"A.A",
+        place:"piyasa",
+        building: "Eliana"
     }
+}
+
+console.log(company.Address.country)
+
+students.forEach(function(s){
+    console.log(s.Name)
+})
+
+
+document.querySelector(".subtitle").innerText ="this subtitle got changed by javascript"
+
+const newDiv = document.createElement("div")
+newDiv.innerText = "i am new div"
+
+console.log(newDiv)
+
+//document.body.appendChild(newDiv)
+//newDiv.remove();
+
+document.getElementById("addElementBtn").addEventListener("click", function(){
+    document.body.appendChild(newDiv)
+})
+
+document.getElementById("removeElementBtn").addEventListener("click", function(){
+    newDiv.remove();
+})
+
+let toggle = false;
+
+document.getElementById("toggleBtn").addEventListener("click", function(){
+    if (toggle == false){
+        document.body.appendChild(newDiv)
+        toggle = true;
+    }else {
+        newDiv.remove();
+        toggle = false;
+    }
+})
+
+let Switch = false;
+
+document.getElementById('switchBtn').addEventListener('click',function(){
+    if(Switch == false){
+        document.getElementById('off').innerText = "On"
+        Switch = true;
+    }else {
+        document.getElementById('off').innerText ="Off"
+        Switch = false;
+    }
+})
+
+let counter = 0;
+
+document.getElementById('addBtn').addEventListener('click', function(){
+    counter = counter+1
+    document.getElementById('counter').innerHTML = counter
+})
+document.getElementById('subtractBtn').addEventListener('click',function(){
+    counter = counter-1
+    document.getElementById('counter').innerHTML = counter
+})
+document.getElementById('resetBtn').addEventListener('click', function(){
+    counter = 0
+    document.getElementById('counter').innerHTML = 0
+})
